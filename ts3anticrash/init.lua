@@ -3,7 +3,7 @@
 require("ts3init")
 
 local MODULE_NAME = "img_autoban"
-local autoban = true
+local autoban = false
 local sendbanmsg = false
 
 local function onTextMessage(serverConnectionHandlerID, targetMode, toID, fromID, fromName, fromUniqueIdentifier, message, ffIgnored)
