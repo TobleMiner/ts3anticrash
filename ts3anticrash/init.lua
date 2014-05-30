@@ -28,7 +28,7 @@ local function onTextMessage(serverConnectionHandlerID, targetMode, toID, fromID
 		if(imgcnt >= 3 or (imgcnt >= 1 and (width or height))) then
 			me = ts3.getClientID(serverConnectionHandlerID)
 			if(autoban) then
-				ts3.banclient(serverConnectionHandlerID, fromID, -1, "Banned by tSYS-Autoban for: bugusing");
+				ts3.banclient(serverConnectionHandlerID, fromID, 0, "Banned by tSYS-Autoban for: bugusing");
 				if(sendbanmsg) then
 					channel = ts3.getChannelOfClient(serverConnectionHandlerID, me)
 					ts3.requestSendChannelTextMsg(serverConnectionHandlerID, "User "..fromID.." banned for bugusing.", channel)
