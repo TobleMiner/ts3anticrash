@@ -6,7 +6,7 @@ local MODULE_NAME = "img_autoban"
 local autoban = true
 local sendbanmsg = false
 
-function onTextMessage(serverConnectionHandlerID, targetMode, toID, fromID, fromName, fromUniqueIdentifier, message, ffIgnored)
+local function onTextMessage(serverConnectionHandlerID, targetMode, toID, fromID, fromName, fromUniqueIdentifier, message, ffIgnored)
 	if(string.find(message, "[img", 1, true)) then
 		message = message:lower()
 		height = message:find("height", 1 ,true)
