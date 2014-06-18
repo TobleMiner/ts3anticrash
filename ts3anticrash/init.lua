@@ -42,6 +42,14 @@ local function onTextMessage(serverConnectionHandlerID, targetMode, toID, fromID
 	return 0
 end
 
-local events = {onTextMessageEvent = onTextMessage}
+local function onClientPoke(serverConnectionHandlerID, pokerID, pokerName, message, ffIgnored)
+	onTextMessage(serverConnectionHandlerID, nil, nil, pokerID, pokerName, nil, message, ffIgnored);
+end
+
+local events =
+{
+	onTextMessageEvent = onTextMessage,
+	onClientPokeEvent = onClientPoke
+}
 
 ts3RegisterModule(MODULE_NAME, events)
